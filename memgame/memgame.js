@@ -8,8 +8,6 @@ class Memgame {
 
   //FIX: It finds undefined for the pitch inside this section, but still plays, it doesn't happen in the test section above. Why? :(
   //at the lines 169/170
-  
-  //FIX: Reduce the background music size
 
   constructor(num_cosocos, polysynth, right_answer, wrong_answer) {
     this.sorted_pitches= shuffle(["A3","C4","D4","E4","G4","A4","C5","D5","E5","G5","A5","C6"]);// A minor pentatonic scale
@@ -95,7 +93,7 @@ class Memgame {
       text(this.cosoco_dict[this.intro_cosoco_counter - 1][1], 150, 390);
 
       let midiNote = this.cosoco_dict[this.intro_cosoco_counter - 1][1];
-      this.polySynthesizer.play(midiNote, 0.3, 0, 0.01);
+      this.polySynthesizer.play(midiNote, 0.3, 0, 1);
       console.log(this.intro_cosoco_counter);
     }
 

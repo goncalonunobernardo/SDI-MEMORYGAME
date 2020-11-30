@@ -6,7 +6,7 @@ let song, right_answer, wrong_answer;
 let polySynthesizer = new p5.PolySynth();
 
 function preload() {
-  song = loadSound('assets/DivineMetatron.wav');
+  song = loadSound('assets/DivineMetatron.mp3');
   right_answer = loadSound('assets/check.wav');
   wrong_answer = loadSound('assets/wrong.wav');
 }
@@ -16,7 +16,7 @@ function setup() {
 
   n_cosocos = 3;
   game = new Memgame(n_cosocos, polySynthesizer, right_answer, wrong_answer);
-  
+
   song.loop();
   song.play();
 }

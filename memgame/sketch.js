@@ -5,6 +5,7 @@ var round_finished_counter_set = false;
 let song, right_answer, wrong_answer;
 let polySynthesizer = new p5.PolySynth();
 let clicked = false;
+let slider;
 
 function preload() {
   song = loadSound('assets/DivineMetatron.mp3');
@@ -14,6 +15,7 @@ function preload() {
 
 function setup() {
   createCanvas(400, 400);
+  slider = createSlider(0,1,0.5,0.01);
 
   n_cosocos = 3;
   game = new Memgame(n_cosocos, polySynthesizer, right_answer, wrong_answer);
@@ -21,11 +23,13 @@ function setup() {
   song.loop();
   song.play();
 
-
 }
 
 function draw() {
   background(220);
+  song.setVolume(slider.value());
+  right_answer.setVolume(slider.value());
+  wrong_answer.setVolume(slider.value());
 
     if (!clicked) {
       textAlign(CENTER, 150);textSize(32);fill(color(0,0,0));text('VediSonor Memory Game', 200, 150);

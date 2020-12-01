@@ -86,8 +86,6 @@ class Memgame {
       fill(color(this.cosoco_dict[this.intro_cosoco_counter - 1][0]));
       noStroke();
       rect(100, 100, 200, 200);
-      textSize(32);
-      text(this.cosoco_dict[this.intro_cosoco_counter - 1][1], 150, 390);
 
       let midiNote = this.cosoco_dict[this.intro_cosoco_counter - 1][1];
       this.polySynthesizer.play(midiNote, 0.3, 0, 1);
@@ -159,8 +157,6 @@ class Memgame {
       fill(color(this.cosoco_dict[this.test_colour][0]));
       noStroke();
       rect(100, 100, 200, 200);
-      textSize(32);
-      text(this.cosoco_dict[this.test_sound][1], 150, 390);
 
       this.polySynthesizer.play(this.cosoco_dict[this.test_sound][1], 0.3, 0, 0.01);
       console.log(this.cosoco_dict[this.test_sound][1]);
